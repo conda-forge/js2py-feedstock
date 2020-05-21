@@ -1,18 +1,18 @@
 {% set name = "Js2Py" %}
-{% set version = "0.67" %}
+{% set version = "0.70" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 168952e3827198f68eacbf84a7b23c80a55794415291f821ec6c96f3fd9c3253
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 7568b33f6bd15ee8ab1f3655928ed05481a6236ad2acca4598703ae501571661
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -43,7 +43,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "JavaScript to Python Translator & JavaScript interpreter written in 100% pure Python."
+  summary: JavaScript to Python Translator & JavaScript interpreter written in 100% pure Python.
   doc_url: http://piter.io/projects/js2py
   dev_url: https://github.com/PiotrDabkowski/Js2Py
 
