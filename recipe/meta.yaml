@@ -1,5 +1,5 @@
 {% set name = "Js2Py" %}
-{% set version = "0.70" %}
+{% set version = "0.71" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7568b33f6bd15ee8ab1f3655928ed05481a6236ad2acca4598703ae501571661
+  sha256: a41b1009dd1498ae7d436bfa5ac952a08ca92a4bb9e31dca6e8bb966b49f7fce
 
 build:
   noarch: python
