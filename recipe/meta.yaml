@@ -17,9 +17,9 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
-    - python
+    - python >=3.6
     - pyjsparser >=2.5.1
     - six >=1.10
     - tzlocal >=1.2
