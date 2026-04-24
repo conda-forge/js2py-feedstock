@@ -6,25 +6,27 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 39f3a6aa8469180efba3c8677271df27c31332fd1b471df1af2af58b87b8972f
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - pyjsparser >=2.5.1
     - six >=1.10
     - tzlocal >=1.2
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - js2py
     - js2py.constructors
